@@ -150,39 +150,7 @@ function TaskModal() {
                                 ))}
                             </div>
                         </div>
-                        {/* Checklist */}
-                        <div>
-                            <div className="flex items-center justify-between mb-1">
-                                <span className="font-semibold text-sm">Checklist</span>
-                                <button
-                                    type="button"
-                                    className="bg-blue-100 px-2 rounded text-blue-800 text-xs"
-                                    onClick={addChecklistItem}
-                                >
-                                    + Add Item
-                                </button>
-                            </div>
-                            <div className="space-y-1">
-                                {form.checklist?.map((item, idx) => (
-                                    <div key={idx} className="flex gap-2 items-center">
-                                        <input
-                                            className="flex-1 border rounded px-1 py-1 text-xs"
-                                            value={item.text}
-                                            onChange={(e) => updateChecklist(idx, e.target.value)}
-                                            placeholder="Checklist item"
-                                        />
-                                        <button
-                                            type="button"
-                                            className="text-red-400 text-xl"
-                                            onClick={() => removeChecklistItem(idx)}
-                                            title="Remove"
-                                        >
-                                            ×
-                                        </button>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                       
                         <div className="flex justify-end gap-2 mt-3">
                             <button
                                 className="bg-gradient-to-tr from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 text-white rounded px-4 py-1 font-bold shadow"
@@ -254,27 +222,7 @@ function TaskModal() {
                                 ></span>
                             )}
                         </div>
-                        {/* Checklist */}
-                        {modalTask.checklist && modalTask.checklist.length > 0 && (
-                            <div className="mb-3">
-                                <div className="font-semibold text-sm mb-1">Checklist</div>
-                                <ul className="space-y-1">
-                                    {modalTask.checklist.map((item, idx) => (
-                                        <li key={idx} className="flex items-center gap-2">
-                                            <input
-                                                type="checkbox"
-                                                checked={item.done}
-                                                onChange={() => toggleChecklistItem(idx)}
-                                                className="accent-purple-400 w-4 h-4"
-                                            />
-                                            <span className={clsx("text-xs", { "line-through text-gray-400": item.done, "text-gray-800": !item.done })}>
-                                                {item.text}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
+                        
 
                         <div className="flex flex-wrap gap-2">
                             <button
