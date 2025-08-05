@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /* For fade-in effect for modal */
 @media (max-width: 600px) {
   .min-w-\[90vw\] {
